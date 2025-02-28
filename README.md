@@ -94,28 +94,28 @@ This repository contains a messy dataset designed for **data cleaning** and **pr
 ### **6. Data Cleaning**
 
 **• Clean & Update email**
-
-  UPDATE messy_indian_dataset 
-      SET email = TRIM(REGEXP_REPLACE(LOWER(email), '[^a-z0-9@.]+' , ''));
-
+  
+    UPDATE messy_indian_dataset 
+        SET email = TRIM(REGEXP_REPLACE(LOWER(email), '[^a-z0-9@.]+' , ''));
+  
 
 **• Clean Phone Number**
 
-  UPDATE messy_indian_dataset 
-      SET phone_number = REGEXP_REPLACE(phone_number, '[^0-9]+' , '');
+    UPDATE messy_indian_dataset 
+        SET phone_number = REGEXP_REPLACE(phone_number, '[^0-9]+' , '');
 
 **• Removing rows with Invalid Phone Number**
-
-  DELETE FROM messy_indian_dataset
-      WHERE LENGTH(phone_number) != 10 OR phone_number REGEXP '[^0-9]';
+  
+    DELETE FROM messy_indian_dataset
+        WHERE LENGTH(phone_number) != 10 OR phone_number REGEXP '[^0-9]';
 
 **• Cleaning Gender even further**
 
-  UPDATE messy_indian_dataset
-      SET gender = CASE
-                      WHEN gender IN ('M' ,'m', 'Male', 'MALE', 'male') THEN 'M'
-                      WHEN gender IN ('F' ,'f', 'Female', 'FEMALE', 'female') THEN 'F'
-                      ELSE 'other'
-                   END;
-  
-  SELECT * FROM messy_indian_dataset;
+    UPDATE messy_indian_dataset
+        SET gender = CASE
+                        WHEN gender IN ('M' ,'m', 'Male', 'MALE', 'male') THEN 'M'
+                        WHEN gender IN ('F' ,'f', 'Female', 'FEMALE', 'female') THEN 'F'
+                        ELSE 'other'
+                     END;
+    
+    SELECT * FROM messy_indian_dataset;
