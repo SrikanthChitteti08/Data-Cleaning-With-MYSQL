@@ -1,6 +1,6 @@
 # 🧹 Messy Indian Dataset - Data Cleaning Project
 ## 📌 Overview
-This repository contains a messy dataset designed for data cleaning and preprocessing exercises. The dataset represents Indian users with inconsistencies such as missing values, duplicate entries, incorrect formats, and null fields. It provides an excellent opportunity to apply data wrangling, transformation, and quality checks before performing analysis.
+This repository contains a messy dataset designed for **data cleaning** and **preprocessing** exercises. The dataset represents Indian users with inconsistencies such as **missing values**, **duplicate entries**, **incorrect formats**, and null fields. It provides an excellent opportunity to apply **data wrangling**, **transformation**, and quality checks before performing analysis.
 
 ## 📊 Dataset Details
 
@@ -10,25 +10,7 @@ This repository contains a messy dataset designed for data cleaning and preproce
 
 **Columns:**
 
-**id (INT, Primary Key)**
-
-**name (VARCHAR)            -** Contains duplicates and null values
-
-**age (INT)                 -** Some missing values
-
-**gender (VARCHAR)          -** Some missing or incorrect entries
-
-**email (VARCHAR)           -** Various domain formats, some missing values
-
-**phone_number (VARCHAR)    -** Possible incorrect/missing values
-
-**city (VARCHAR)            -** Some missing entries
-
-**state (VARCHAR)           -** Some missing or inconsistent entries
-
-**purchase_amount (DECIMAL) -** Null values present
-
-**purchase_date (DATE)      -** Some missing values
+![Screenshot 2025-02-28 185900](https://github.com/user-attachments/assets/e2ae2ccd-fbda-4c21-b191-7292dcf331b0)
 
 ## 🔍 Data Cleaning Tasks
 ## The dataset requires multiple data cleaning operations, including:
