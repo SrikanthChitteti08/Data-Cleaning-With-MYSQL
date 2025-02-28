@@ -59,19 +59,19 @@ This repository contains a messy dataset designed for **data cleaning** and **pr
  
 ### **3. Filling Values In Their Dataset?**
   **• Filling null city with most frequent city?**
-  
-      UPDATE messy_indian_dataset 
-      SET city = (			
-      				SELECT most_frequent_city FROM
-      						(
-      							SELECT city AS most_frequent_city , COUNT(*)  AS 'frequency' 
-      							FROM messy_indian_dataset
-      							WHERE city IS NOT NULL
-      							GROUP BY city
-      							ORDER BY COUNT(*) DESC
-      							LIMIT 1
-      						) AS subquery
-      			) WHERE city IS NULL;
+
+    UPDATE messy_indian_dataset 
+    SET city = (			
+            SELECT most_frequent_city FROM
+                (
+                  SELECT city AS most_frequent_city , COUNT(*)  AS 'frequency' 
+                  FROM messy_indian_dataset
+                  WHERE city IS NOT NULL
+                  GROUP BY city
+                  ORDER BY COUNT(*) DESC
+                  LIMIT 1
+                ) AS subquery
+          ) WHERE city IS NULL;
 
 ### **4. Handling Duplicates**
 **• Finding unique values based on multiple columns | Rajesh Patel & Patil?**
@@ -98,13 +98,16 @@ This repository contains a messy dataset designed for **data cleaning** and **pr
     UPDATE messy_indian_dataset 
         SET email = TRIM(REGEXP_REPLACE(LOWER(email), '[^a-z0-9@.]+' , ''));
 
+
 **• Clean Phone Number**
     UPDATE messy_indian_dataset 
         SET phone_number = REGEXP_REPLACE(phone_number, '[^0-9]+' , '');
 
+
 **• Removing rows with Invalid Phone Number**
     DELETE FROM messy_indian_dataset
         WHERE LENGTH(phone_number) != 10 OR phone_number REGEXP '[^0-9]';
+
 
 **• Cleaning Gender even further**
 
