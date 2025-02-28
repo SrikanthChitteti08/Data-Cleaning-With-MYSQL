@@ -121,15 +121,15 @@ This repository contains a messy dataset designed for **data cleaning** and **pr
     SELECT * FROM messy_indian_dataset;
 
 ## Cleaning Steps Implemented  :
-**• Database Setup               :** Created messy_indian_dataset table.
-
-***• Handling Missing Values      :** Found missing values and filled them appropriately.
-
-**• Filling Missing Cities       :** Used the most frequently occurring city.
-
-**• Handling Duplicates          :** Identified unique records based on id and name.
-
-**• Outlier Detection            :** Removed extreme purchase_amount values using the Z-score method.
+  **• Database Setup               :** Created messy_indian_dataset table.
+  
+  **• Handling Missing Values      :** Found missing values and filled them appropriately.
+  
+  **• Filling Missing Cities       :** Used the most frequently occurring city.
+  
+  **• Handling Duplicates          :** Identified unique records based on id and name.
+  
+  **• Outlier Detection            :** Removed extreme purchase_amount values using the Z-score method.
 
 **• Standardizing & Cleaning Data:**
 
