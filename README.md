@@ -92,6 +92,7 @@ This repository contains a messy dataset designed for **data cleaning** and **pr
         ) AS sub_table WHERE sub_table.z_score < 3;
 
 ### **6. Data Cleaning**
+
 **• Clean & Update email**
 
     UPDATE messy_indian_dataset 
