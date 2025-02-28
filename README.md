@@ -26,4 +26,21 @@ This repository contains a messy dataset designed for **data cleaning** and **pr
 ## Project Structure
 
 ### **1. Database Setup**
-   **•** Database Creation: The project starts by creating a database named.
+   **•** **Database Creation:** The project starts by creating a database named.
+
+   
+      CREATE DATABASE sports;
+      USE sports;
+      DROP TABLE IF EXISTS messy_indian_dataset;
+      CREATE TABLE IF NOT EXISTS messy_indian_dataset (
+          id INT PRIMARY KEY,
+          name VARCHAR(50),
+          age INT,
+          gender VARCHAR(10),
+          email VARCHAR(100),
+          phone_number VARCHAR(15),
+          city VARCHAR(50),
+          state VARCHAR(50),
+          purchase_amount DECIMAL(10, 2),
+          purchase_date DATE
+      );
