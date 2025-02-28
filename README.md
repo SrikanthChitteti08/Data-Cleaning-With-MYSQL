@@ -122,9 +122,7 @@ This repository contains a messy dataset designed for **data cleaning** and **pr
 
 ## Cleaning Steps Implemented :
 ### Database Setup:
-
       Created messy_indian_dataset table.
-      
 ### Handling Missing Values:
 
       Found missing values and filled them appropriately.
