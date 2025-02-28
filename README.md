@@ -15,7 +15,11 @@ This repository contains a messy dataset designed for **data cleaning** and **pr
 ## 🔍 Data Cleaning Tasks
 ## The dataset requires multiple data cleaning operations, including:
 **•** Handling missing values (NULLs in age, email, phone, etc.)
+
 **•** Removing duplicates (Identical entries in name, email, etc.)
+
 **•** Standardizing formats (Emails, phone numbers, state names)
+
 **•** Correcting inconsistencies (Gender values, city-state mapping)
+
 **•** Handling null purchase amounts
