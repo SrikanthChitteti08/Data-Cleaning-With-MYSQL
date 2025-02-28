@@ -44,3 +44,15 @@ This repository contains a messy dataset designed for **data cleaning** and **pr
           purchase_amount DECIMAL(10, 2),
           purchase_date DATE
       );
+### **2. Handling Missing Values**
+  **• Find rows with missing values in any column?**
+       
+        SELECT * FROM messy_indian_dataset 
+          WHERE name IS NULL OR age IS NULL OR gender IS NULL OR email IS NULL OR city IS NULL OR
+            phone_number IS NULL OR state IS NULL OR purchase_amount IS NULL OR purchase_date IS NULL;
+
+  **• Find rows without missing values?**
+  
+        SELECT * FROM messy_indian_dataset 
+        	WHERE name IS NOT NULL AND age IS NOT NULL AND gender IS NOT NULL AND email IS NOT NULL AND city IS NOT NULL AND
+            phone_number IS NOT NULL AND state IS NOT NULL AND purchase_amount IS NOT NULL AND purchase_date IS NOT NULL;
