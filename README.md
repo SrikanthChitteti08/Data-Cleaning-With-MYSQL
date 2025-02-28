@@ -2,7 +2,7 @@
 ## 📌 Overview
 This repository contains a messy dataset designed for **data cleaning** and **preprocessing** exercises. The dataset represents Indian users with inconsistencies such as **missing values**, **duplicate entries**, **incorrect formats**, and null fields. It provides an excellent opportunity to apply **data wrangling**, **transformation**, and quality checks before performing analysis.
 
-## 📊 Dataset Details
+## 📊 Table Schema
 
 **Table Name:** messy_indian_dataset
 
@@ -22,3 +22,8 @@ This repository contains a messy dataset designed for **data cleaning** and **pr
 **•** Correcting inconsistencies (Gender values, city-state mapping)
 
 **•** Handling null purchase amounts
+
+## Project Structure
+
+### **1. Database Setup**
+  **•** Database Creation: The project starts by creating a database named.
