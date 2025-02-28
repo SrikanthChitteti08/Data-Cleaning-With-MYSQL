@@ -26,4 +26,4 @@ This repository contains a messy dataset designed for **data cleaning** and **pr
 ## Project Structure
 
 ### **1. Database Setup**
-  **•** Database Creation: The project starts by creating a database named.
+    **•** Database Creation: The project starts by creating a database named.
