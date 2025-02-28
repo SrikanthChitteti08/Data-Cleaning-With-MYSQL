@@ -56,3 +56,62 @@ This repository contains a messy dataset designed for **data cleaning** and **pr
         SELECT * FROM messy_indian_dataset 
         	WHERE name IS NOT NULL AND age IS NOT NULL AND gender IS NOT NULL AND email IS NOT NULL AND city IS NOT NULL AND
             phone_number IS NOT NULL AND state IS NOT NULL AND purchase_amount IS NOT NULL AND purchase_date IS NOT NULL;
+ 
+### **3. Filling Values In Their Dataset?**
+  **• Filling null city with most frequent city?**
+  
+      UPDATE messy_indian_dataset 
+      SET city = (			
+      				SELECT most_frequent_city FROM
+      						(
+      							SELECT city AS most_frequent_city , COUNT(*)  AS 'frequency' 
+      							FROM messy_indian_dataset
+      							WHERE city IS NOT NULL
+      							GROUP BY city
+      							ORDER BY COUNT(*) DESC
+      							LIMIT 1
+      						) AS subquery
+      			) WHERE city IS NULL;
+
+### **4. Handling Duplicates**
+**• Finding unique values based on multiple columns | Rajesh Patel & Patil?**
+
+    SELECT id, name, age, gender, email, phone_number, city, state, purchase_amount, purchase_date FROM (
+        SELECT *, ROW_NUMBER() OVER(PARTITION BY id, name ORDER BY id) AS 'rank' FROM messy_indian_dataset
+    ) AS subtable
+    WHERE subtable.rank = 1;
+
+### **5. Handling Outliers**
+**• Remove outliers based on specific Z-Score?**
+
+    SELECT * FROM
+        (
+            SELECT *, 
+                ABS(purchase_amount - AVG(purchase_amount) OVER()) / STDDEV(purchase_amount) OVER() AS 'z_score'
+            FROM messy_indian_dataset
+        ) AS sub_table WHERE sub_table.z_score < 3;
+
+### **6. Data Cleaning**
+**• Clean & Update email**
+
+    UPDATE messy_indian_dataset 
+        SET email = TRIM(REGEXP_REPLACE(LOWER(email), '[^a-z0-9@.]+' , ''));
+
+**• Clean Phone Number**
+    UPDATE messy_indian_dataset 
+        SET phone_number = REGEXP_REPLACE(phone_number, '[^0-9]+' , '');
+
+**• Removing rows with Invalid Phone Number**
+    DELETE FROM messy_indian_dataset
+        WHERE LENGTH(phone_number) != 10 OR phone_number REGEXP '[^0-9]';
+
+**• Cleaning Gender even further**
+
+    UPDATE messy_indian_dataset
+        SET gender = CASE
+                        WHEN gender IN ('M' ,'m', 'Male', 'MALE', 'male') THEN 'M'
+                        WHEN gender IN ('F' ,'f', 'Female', 'FEMALE', 'female') THEN 'F'
+                        ELSE 'other'
+                     END;
+    
+    SELECT * FROM messy_indian_dataset;
