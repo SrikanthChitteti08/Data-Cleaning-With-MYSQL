@@ -122,15 +122,23 @@ This repository contains a messy dataset designed for **data cleaning** and **pr
 
 ## Cleaning Steps Implemented  :
 **Database Setup               :** Created messy_indian_dataset table.
+
 **Handling Missing Values      :** Found missing values and filled them appropriately.
+
 **Filling Missing Cities       :** Used the most frequently occurring city.
+
 **Handling Duplicates          :** Identified unique records based on id and name.
+
 **Outlier Detection            :** Removed extreme purchase_amount values using the Z-score method.
+
 **Standardizing & Cleaning Data:**
-                **Emails       :** Removed unwanted characters and standardized lowercase formatting.
-                **Phone Numbers:** Removed non-numeric characters and ensured a 10-digit length.
-                **Gender       :** Standardized values to "M", "F", or "Other".
-                
+
+  **Emails       :** Removed unwanted characters and standardized lowercase formatting.
+  
+  **Phone Numbers:** Removed non-numeric characters and ensured a 10-digit length.
+  
+  **Gender       :** Standardized values to "M", "F", or "Other".
+  
 
 ## **Final Outcome**
 After cleaning, the dataset is structured, standardized, and ready for analysis. It ensures accuracy, consistency, and reliability for downstream analytics and insights.
