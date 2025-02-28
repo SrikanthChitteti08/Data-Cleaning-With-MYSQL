@@ -9,7 +9,6 @@ This repository contains a messy dataset designed for **data cleaning** and **pr
 **Total Records:** 30
 
 **Columns:**
-
 ![Screenshot 2025-02-28 185900](https://github.com/user-attachments/assets/e2ae2ccd-fbda-4c21-b191-7292dcf331b0)
 
 ## 🔍 Data Cleaning Tasks
